@@ -30,8 +30,8 @@ public class TicketController {
 	
 	@GetMapping("/listarTickets")
 	public String Pacientes(Model ticket) {
-		ticket.addAttribute("pacientes", ticketRepository.findAll());
-		return "/paciente/listar-pacientes";
+		ticket.addAttribute("ticket", ticketRepository.findAll());
+		return "/listar";
 	}
 	
 	
