@@ -1,5 +1,9 @@
 package com.Ticket.controller;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,14 +26,14 @@ public class TicketController {
 	}
 	
 	@PostMapping({"/Formulario/save"})
-	public ModelAndView PacientesModel(TicketModel ticket) {
-		ModelAndView mv = new ModelAndView("redirect:/");
-		ticketRepository.save(ticket);
+	public ModelAndView TicketSave(TicketModel ticket) {
+	ModelAndView mv = new ModelAndView("redirect:/");
+	ticketRepository.save(ticket);
 		return mv;
 	}
 	
 	@GetMapping("/listarTickets")
-	public String Pacientes(Model ticket) {
+	public String listarTickets(Model ticket) {
 		ticket.addAttribute("ticket", ticketRepository.findAll());
 		return "/listar";
 	}

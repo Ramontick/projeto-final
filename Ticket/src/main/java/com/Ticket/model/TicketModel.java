@@ -33,11 +33,76 @@ import jakarta.persistence.Table;
 		@Column(name = "descricao")
 		private String descricao;
 
-		@Column(name = "situcacao")
+		@Column(name = "situacao")
 		private boolean situacao;
 		
 		@Column(name = "data_criacao")
 		private Date data_criacao;
+
+	
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public String getEmail() {
+			return email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
+		}
+
+		public String getTelefone() {
+			return telefone;
+		}
+
+		public void setTelefone(String telefone) {
+			this.telefone = telefone;
+		}
+
+		public String getTitulo() {
+			return titulo;
+		}
+
+		public void setTitulo(String titulo) {
+			this.titulo = titulo;
+		}
+
+		public String getDescricao() {
+			return descricao;
+		}
+
+		public void setDescricao(String descricao) {
+			this.descricao = descricao;
+		}
+
+		public boolean isSituacao() {
+			return situacao;
+		}
+
+		public void setSituacao(boolean situacao) {
+			this.situacao = situacao;
+		}
+
+		public Date getData_criacao() {
+			return data_criacao;
+		}
+
+		public void setData_criacao(Date data_criacao) {
+			this.data_criacao = data_criacao;
+		}
 
 	
 }
