@@ -35,7 +35,7 @@ public class TicketController {
 	@GetMapping("/listarTickets")
 	public String listarTickets(Model ticket) {
 		ticket.addAttribute("ticket", ticketRepository.findAll());
-		return "/listar";
+		return "/Home";
 	}
 	
 	
