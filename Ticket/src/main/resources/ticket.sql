@@ -7,6 +7,6 @@ email varchar (100),
 telefone varchar(11),
 titulo varchar (30),
 descricao varchar (200),
-situacao boolean ,
-data_criacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP 
+situacao boolean default false,
+data_criacao datetime DEFAULT CURRENT_TIMESTAMP 
 );

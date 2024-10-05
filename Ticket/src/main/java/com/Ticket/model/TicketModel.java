@@ -1,6 +1,7 @@
 package com.Ticket.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,9 +38,9 @@ import jakarta.persistence.Table;
 		private boolean situacao;
 		
 		@Column(name = "data_criacao")
-		private Date data_criacao;
+		private LocalDateTime data_criacao;
 
-	
+
 		public int getId() {
 			return id;
 		}
@@ -96,13 +97,12 @@ import jakarta.persistence.Table;
 			this.situacao = situacao;
 		}
 
-		public Date getData_criacao() {
+		public LocalDateTime getData_criacao() {
 			return data_criacao;
 		}
 
-		public void setData_criacao(Date data_criacao) {
+		public void setData_criacao(LocalDateTime data_criacao) {
 			this.data_criacao = data_criacao;
-		}
-
+		}	
 	
 }
