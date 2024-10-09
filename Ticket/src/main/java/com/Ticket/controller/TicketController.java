@@ -38,5 +38,20 @@ public class TicketController {
 		return "/Home";
 	}
 	
+	@GetMapping({"/Formulario"})
+	public String Formulario() {
+	return "Formulario";
+	}
+	
+	@GetMapping({"/painel"})
+	public String teste() {
+	return "teste";
+	}
+	
+	@GetMapping({"/Home"})
+	public String Home() {
+	return "Home";
+	}
+	
 	
 }

@@ -29,13 +29,15 @@ public class SecSecurityConfig {
 	 
 	    http.authorizeHttpRequests(
 	            auth -> auth.requestMatchers("/signin", "/signup").permitAll()
-	            .requestMatchers("/").hasAnyRole("administrador")		         
-	            .requestMatchers("/admin/**").hasRole("administrador")	
+	            .requestMatchers("/").hasAnyAuthority("administrador")		         
+	            .requestMatchers("/admin/**").hasAnyAuthority("administrador")
+	            .requestMatchers("/painel").hasAnyAuthority("administrador")
+	            .requestMatchers("/Formulario").hasAnyAuthority("administrador","usuario")
 	
 	            .anyRequest().authenticated()
 	           )
 	            .formLogin(formLogin -> formLogin	            		
-	                    .defaultSuccessUrl("/principal", true)
+	                    .defaultSuccessUrl("/Formulario", true)
 	                    .permitAll()
 	            )
 	            .rememberMe(rememberMe -> rememberMe.key("AbcdEfghIjkl..."))

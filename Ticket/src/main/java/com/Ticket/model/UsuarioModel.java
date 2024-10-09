@@ -20,7 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 @Entity
-@Table(name = "usuario", schema = "horario")
+@Table(name = "usuario", schema = "ticket")
 public class UsuarioModel implements Serializable,UserDetails {
 
 	private static final long serialVersionUID = 1L;
@@ -48,8 +48,8 @@ public class UsuarioModel implements Serializable,UserDetails {
 	private Date dataExpiracao;
 
 	@ManyToMany
-	@JoinTable(name="usuarios_permissao",
-    joinColumns={@JoinColumn(name="usuarios_id_usuario", referencedColumnName = "id_usuario")},
+	@JoinTable(name="usuario_permissao",
+    joinColumns={@JoinColumn(name="usuario_id_usuario", referencedColumnName = "id_usuario")},
     inverseJoinColumns={@JoinColumn(name="permissao_id_permissao", referencedColumnName = "id_permissao")})
 	private List<PermissaoModel> permissoes;
 	

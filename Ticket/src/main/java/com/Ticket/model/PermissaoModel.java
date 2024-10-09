@@ -16,7 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 
 @Entity
-@Table(name = "permissao" , schema = "horario")
+@Table(name = "permissao" , schema = "ticket")
 public class PermissaoModel implements Serializable,GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;	
