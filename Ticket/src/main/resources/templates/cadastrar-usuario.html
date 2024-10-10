@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Formulário</title>
+  <title>Cadastro de usuario</title>
   <link rel="shortcut icon" type="image/png" href="./assets/images/logos/seodashlogo.png" />
   <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
   <link rel="stylesheet" href="./assets/css/styles.min.css" />
@@ -16,10 +16,9 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
             <li class="nav-item d-block d-xl-none">
-              
-              
             </li>
-           <li> <div>
+           <li>
+          <div>
             <div class="brand-logo d-flex align-items-center justify-content-between">
               <a href="./index.html" class="text-nowrap logo-img">
                 <img src="./assets/images/logos/logoticket.svg" alt="" />
@@ -33,15 +32,15 @@
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
           
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" >
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <img src="./assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
                 </a>
-                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up  m-0 ml-5" aria-labelledby="drop2">
                   <div class="message-body">
                
-                    <a href="/logar" class="btn btn-outline-primary mx-3 mt-2 d-block btn-sm">Entrar</a><!--<a href="#" class="btn btn-outline-danger mx-3 mt-2 d-block">Sair</a>-->
+                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block  p-1">Entrar</a><!--<a href="#" class="btn btn-outline-danger mx-3 mt-2 d-block">Sair</a>-->
                   </div>
                 </div>
               </li>
@@ -53,7 +52,7 @@
       <div class="container-fluid ">
         <div class="card "  style="position: relative; top: 50%; transform: translate(0,70px);"><!--caso queira colocar menor so usar "w-50 p-3" em class-->
           <div class="card-body shadow-sm " >
-            <h5 class="card-title fw-semibold mb-4">Formulario</h5>
+            <h5 class="card-title fw-semibold mb-3 fs-8">Cadastro de Usuário</h5>
             <div class="card">
               <div class="card-body">
                 <form  method="post" th:action="@{/Formulario/save}"  th:object="${TicketModel}">
@@ -66,22 +65,28 @@
                       <label  class="form-label">Telefone</label>
                       <input type="text" id="telefone" name="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
                     </div>
+                  </div>
+                  <div class="row" style="margin-top: 10px;">
+                    <div class="col">
+                      <label  class="form-label">Cpf</label>
+                      <input type="text"  id="Cpf" name="Cpf" class="form-control" placeholder="Cpf">
+                    </div>
                     <div class="col">
                       <label  class="form-label">Email</label>
-                      <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu Email para contato">
+                      <input type="text" id="Email" name="Email" class="form-control" placeholder="Email">
+                    </div>
+                  </div>
+                    <div class="row" style="margin-top: 10px;">
+                    <div class="col">
+                      <label  class="form-label">Senha</label>
+                      <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite uma senha forte ">
                     </div>
                   </div>
                   <br>
-                  <div class="mb-3">
-                    <label  class="form-label">Titulo</label>
-                    <input type="text" id="titulo" name="titulo" class="form-control"aria-describedby="emailHelp">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Faça uma descrição da sua demanda</label>
-                    <textarea class="form-control" id="descricao" name="descricao" rows="3" style="resize: none;"></textarea>
-                  </div>
-                  
-                  <button type="submit" class="btn btn-primary m-2">Enviar</button>
+             
+                  <div class="text-end">
+                  <button type="submit" class="btn btn-primary m-2 ">Cadastrar</button>
+                </div>
                 </form>
               </div>
             </div>

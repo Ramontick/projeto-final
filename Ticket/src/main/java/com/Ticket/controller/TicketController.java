@@ -43,9 +43,14 @@ public class TicketController {
 	return "Formulario";
 	}
 	
-	@GetMapping({"/painel"})
-	public String teste() {
-	return "teste";
+	@GetMapping({"/cadastrar-usuario"})
+	public String cadastrarUsuario() {
+	return "cadastrar-usuario";
+	}
+	
+	@GetMapping({"/logar"})
+	public String TelaDeLogin() {
+	return "logar";
 	}
 	
 	@GetMapping({"/Home"})
