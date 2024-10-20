@@ -55,7 +55,7 @@
             <h5 class="card-title fw-semibold mb-3 fs-8">Cadastro de Usuário</h5>
             <div class="card">
               <div class="card-body">
-                <form  method="post" th:action="@{/Formulario/save}"  th:object="${TicketModel}">
+                <form  method="post" th:action="@{/Formulario/salvar}" th:object="${usuario}" >
                   <div class="row">
                     <div class="col">
                       <label  class="form-label">Nome</label>
@@ -77,6 +77,10 @@
                     </div>
                   </div>
                     <div class="row" style="margin-top: 10px;">
+						<div class="col">
+                      <label  class="form-label">Permissao</label>
+                      <input type="text" id="permissao" name="permissao" class="form-control" placeholder="permissao">
+                    	</div>
                     <div class="col">
                       <label  class="form-label">Senha</label>
                       <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite uma senha forte ">

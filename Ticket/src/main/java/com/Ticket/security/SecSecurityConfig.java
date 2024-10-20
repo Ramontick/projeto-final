@@ -38,7 +38,7 @@ public class SecSecurityConfig {
 	            .anyRequest().authenticated()
 	           )
 	            .formLogin(formLogin -> formLogin	            		
-	                    .defaultSuccessUrl("/Formulario", true)
+	                    .defaultSuccessUrl("/listarTickets", true)
 	                    .permitAll()
 	            )
 	            .rememberMe(rememberMe -> rememberMe.key("AbcdEfghIjkl..."))
@@ -47,6 +47,9 @@ public class SecSecurityConfig {
 	 
 	    return http.build();
 	}
+	
+	
+	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 	  throws Exception {

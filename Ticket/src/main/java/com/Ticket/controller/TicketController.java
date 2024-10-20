@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.Ticket.model.TicketModel;
+import com.Ticket.model.UsuarioModel;
 import com.Ticket.repository.TicketRepository;
+import com.Ticket.services.UsuarioService;
 
 @Controller
 public class TicketController {
 
 	@Autowired
 	private TicketRepository ticketRepository;
+	
+	@Autowired
+    private UsuarioService usuarioService; 
+	
 	
 	@GetMapping({"/"})
 	public String start() {
@@ -47,6 +53,14 @@ public class TicketController {
 	public String cadastrarUsuario() {
 	return "cadastrar-usuario";
 	}
+	
+	@PostMapping({"/Formulario/salvar"})
+    public ModelAndView criarUsuario(UsuarioModel usuario) {
+        usuarioService.salvarUsuario(usuario);
+          
+        return new ModelAndView("redirect:/listarTickets");
+    }
+	
 	
 	@GetMapping({"/logar"})
 	public String TelaDeLogin() {

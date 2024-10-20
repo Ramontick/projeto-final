@@ -43,7 +43,19 @@ public class UsuarioModel implements Serializable,UserDetails {
 	@Column(name = "senha") 
 	private String senha;
 	
+	@Column(name = "permissao") 
+	private int permissao;
+	
+	
 
+	public int getPermissao() {
+		return permissao;
+	}
+	public void setPermissao(int permissao) {
+		this.permissao = permissao;
+	}
+	
+	
 	@Column(name = "data_expiracao") 
 	private Date dataExpiracao;
 
