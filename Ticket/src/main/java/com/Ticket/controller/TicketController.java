@@ -2,11 +2,13 @@ package com.Ticket.controller;
 
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -75,6 +77,28 @@ public class TicketController {
 	public String teste() {
 	return "teste";
 	}
+	
+	 @GetMapping("usuario-{id}")
+	  public String busca(@PathVariable int id, Model model){
+	    Optional<TicketModel> ticket =  ticketRepository.findById(id);
+	    try{
+	      model.addAttribute("ticket", ticket.get());
+	    }
+	    catch(Exception err){ return "redirect:/"; }
+
+		return ("Formulario-visualizar");
+	  }
+
+	 
+	 
+	 @GetMapping("/deleteTicket-{id}")
+		public String Deletar(TicketModel ticket,@PathVariable("id") int id ) {
+		ticket = (TicketModel)this.ticketRepository.getOne(id);
+		this.ticketRepository.delete(ticket);
+
+		return"redirect:/";
+	}
+	
 	
 	
 	

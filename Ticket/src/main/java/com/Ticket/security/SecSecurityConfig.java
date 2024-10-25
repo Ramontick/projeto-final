@@ -29,7 +29,7 @@ public class SecSecurityConfig {
 	 
 	    http.authorizeHttpRequests(
 	            auth -> auth.requestMatchers("/signin", "/signup").permitAll()
-	            .requestMatchers("/","/teste").hasAnyAuthority("administrador")		 
+	            .requestMatchers("/teste").hasAnyAuthority("administrador")		 
 	            .requestMatchers("/listarTickets","/logar","/cadastrar-usuario").hasAnyAuthority("administrador")		         
 	            .requestMatchers("/admin/**").hasAnyAuthority("administrador")
 	            .requestMatchers("/painel").hasAnyAuthority("administrador")

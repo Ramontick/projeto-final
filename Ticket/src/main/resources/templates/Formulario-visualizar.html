@@ -56,32 +56,38 @@
             <h5 class="card-title fw-semibold mb-4">Formulario</h5>
             <div class="card">
               <div class="card-body">
-                <form  method="post" th:action="@{/Formulario/save}"  th:object="${TicketModel}">
+                <form  method="post"  >
                   <div class="row">
                     <div class="col">
                       <label  class="form-label">Nome</label>
-                      <input type="text"  id="nome" name="nome" class="form-control" placeholder="Nome">
+                      <input type="text"  id="nome" name="nome" class="form-control"  th:value="${ticket?.nome}"  placeholder="Nome">
                     </div>
                     <div class="col">
                       <label  class="form-label">Telefone</label>
-                      <input type="text" id="telefone" name="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
+                      <input type="text" id="telefone" name="telefone" class="form-control"  th:value="${ticket?.telefone}" placeholder="(xx) xxxxx-xxxx">
                     </div>
                     <div class="col">
                       <label  class="form-label">Email</label>
-                      <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu Email para contato">
+                      <input type="email" id="email" name="email" class="form-control"  th:value="${ticket?.email}" placeholder="Digite seu Email para contato">
                     </div>
                   </div>
                   <br>
                   <div class="mb-3">
                     <label  class="form-label">Titulo</label>
-                    <input type="text" id="titulo" name="titulo" class="form-control"aria-describedby="emailHelp">
+                    <input type="text" id="titulo" name="titulo" th:value="${ticket?.titulo}" class="form-control"aria-describedby="emailHelp">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Faça uma descrição da sua demanda</label>
-                    <textarea class="form-control" id="descricao" name="descricao" rows="3" style="resize: none;"></textarea>
+                    <textarea class="form-control" id="descricao" name="descricao"  rows="3" style="resize: none;"   th:inline="text">[[${ticket?.descricao}]]</textarea>
                   </div>
                   
                   <button type="submit" class="btn btn-primary m-2">Enviar</button>
+                  <div th:if="${userLogado.permissao == '2'}">
+        <button>Botão Visível para adm </button>  
+        </div>
+        
+				<button  class="btn btn-danger"><a style="text-decoration: none;color: aliceblue;" th:href="@{/deleteTicket-{id}(id=${ticket.id})}">Delete</a></button>
+
                 </form>
               </div>
             </div>

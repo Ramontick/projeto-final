@@ -33,7 +33,8 @@ UsuarioRepository usuarioRepository;
 	            
 	            if (usuario != null) {
 	                userInfo.put("nome", usuario.getNome()); 
-	                userInfo.put("cpf", usuario.getCpf()); 
+	                userInfo.put("cpf", usuario.getCpf());
+	                userInfo.put("permissao", ""+ usuario.getPermissao());
 	            }
 	        }
 	        
