@@ -71,6 +71,11 @@ public class TicketController {
 	public String Home() {
 	return "Home";
 	}
+	@GetMapping({"/teste"})
+	public String teste() {
+	return "teste";
+	}
+	
 	
 	
 }

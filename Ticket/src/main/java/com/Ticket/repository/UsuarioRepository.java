@@ -17,6 +17,9 @@ import com.Ticket.model.UsuarioModel;
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long> {
 	
+	UsuarioModel findByCpf(String cpf);
+	
+	
 	  boolean existsByCpf(String cpf);
 	  boolean existsByEmail(String email);
 	  UsuarioModel getOneByCpf(String cpf);
