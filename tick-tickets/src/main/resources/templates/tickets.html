@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tickets</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <h1>Lista de Tickets</h1>
+    <a th:href="@{ / }" class="back-button">Página Inicial</a> <!-- Link para a página inicial -->
+    <a th:href="@{/tickets/new}" class="back-button">Novo Ticket</a>
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+        <tr th:each="ticket : ${tickets}">
+            <td th:text="${ticket.title}">Título</td>
+            <td th:text="${ticket.description}">Descrição</td>
+            <td th:text="${ticket.status}">Status</td>
+            <td>
+                <a th:href="@{/tickets/edit/{id}(id=${ticket.id})}">Editar</a>
+                <a th:href="@{/tickets/delete/{id}(id=${ticket.id})}">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
