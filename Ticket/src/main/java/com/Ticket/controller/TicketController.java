@@ -91,7 +91,8 @@ public class TicketController {
 
 	 
 	 
-	 @GetMapping("/deleteTicket-{id}")
+	 @SuppressWarnings("deprecation")
+	@GetMapping("/deleteTicket-{id}")
 		public String Deletar(TicketModel ticket,@PathVariable("id") int id ) {
 		ticket = (TicketModel)this.ticketRepository.getOne(id);
 		this.ticketRepository.delete(ticket);
