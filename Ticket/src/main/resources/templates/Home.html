@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -34,14 +34,14 @@
           <ul id="sidebarnav">
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
-              <span class="hide-menu">Home</span>
+              <span class="hide-menu">Principal</span>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="./index.html" aria-expanded="false">
                 <span>
                   <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Dashboard</span>
+                <span class="hide-menu">Painel</span>
               </a>
             </li>
             
@@ -50,7 +50,7 @@
                 <span>
                   <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                 </span>
-                <span class="hide-menu">Formularios</span>
+                <span class="hide-menu">Formulários</span>
               </a>
             </li>
      
@@ -89,7 +89,7 @@
         <div class="col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ticket List 📑   </h5> <span th:text="${userLogado.nome}"></span>
+              <h5 class="card-title">Lista de Tickets 📑   </h5> <span th:text="${userLogado.nome}"></span>
               <div class="table-responsive">
                 <table class="table text-nowrap align-middle mb-0">
                   <thead>
@@ -107,7 +107,7 @@
                       <td class="text-center fw-medium" th:text="${ticket.telefone}"></td>
                       
                    <td class="text-center fw-medium" >
-                    <button  class="btn btn-warning"><a style="text-decoration: none;color: aliceblue;" th:href="@{/usuario-{id} (id=${ticket.id})}">visualizar</a></button> 
+                    <button  class="btn btn-warning"><a style="text-decoration: none;color: aliceblue;" th:href="@{/usuario-{id} (id=${ticket.id})}">Visualizar</a></button> 
                <!--     <button  class="btn btn-danger"><a style="text-decoration: none;color: aliceblue;" th:href="@{/deleteTicket-{id}(id=${ticket.id})}">Delete</a></button>-->
                    </td>
                     </tr>
